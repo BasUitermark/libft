@@ -4,9 +4,9 @@ char	ft_tolower(char c)
 	return (c);
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int	main(void)
-// {
-// 	printf("%c\n", ft_tolower('A'));
-// }
+int	main(void)
+{
+	printf("%c\n", ft_tolower('A'));
+}
