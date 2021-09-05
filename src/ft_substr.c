@@ -34,16 +34,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	return (0);
 }
-
-#include <stdio.h>
-
-int	main(void)
-{
-	char	string[] = "this is a string";
-	char	*substring;
-
-	substring = ft_substr(string, 1, 6);
-	printf("%s\n", substring);
-	free(substring);
-	return (0);
-}
