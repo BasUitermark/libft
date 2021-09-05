@@ -21,10 +21,3 @@ char	*ft_strnstr(char *string, char *to_find, size_t len)
 	}
 	return (0);
 }
-
-#include <stdio.h>
-
-int	main(void)
-{
-	printf("%s\n", ft_strnstr("this is a string, it really is.", "string", 8));
-}
