@@ -12,12 +12,3 @@ char	*ft_strchr(const char *str, int c)
 	}
 	return (0);
 }
-
-#include <stdio.h>
-
-int main(int argc, char const *argv[])
-{
-	printf("%s\n", ft_strchr("", 's'));
-
-	return 0;
-}
