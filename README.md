@@ -13,7 +13,7 @@ This library is meant to be expanded on throughout the year to help with future 
 
 ### Libc Functions
 
-* [`ft_memset`](libft/blob/master/src/ft_memset.c) :ballot_box_with_check:
+* [`ft_memset`](Pr1malCodam/libft/blob/master/src/ft_memset.c) :ballot_box_with_check:
 * `ft_bzero` :ballot_box_with_check:
 * `ft_memcpy` :ballot_box_with_check:
 * `ft_memmove` :ballot_box_with_check:
