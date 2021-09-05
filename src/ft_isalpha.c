@@ -7,10 +7,3 @@ int	ft_isalpha(char c)
 	else
 		return (0);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	printf("%d\n", ft_isalpha('0'));
-// }
