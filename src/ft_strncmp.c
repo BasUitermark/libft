@@ -14,13 +14,3 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 	else
 		return (s1[i] - s2[i]);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	string1[] = "this one is long";
-// 	char	string2[] = "this oNe is long";
-
-// 	printf("%d\n", ft_strncmp(string1, string2, 5));
-// }
