@@ -13,7 +13,7 @@ This library is meant to be expanded on throughout the year to help with future 
 
 ### Libc Functions
 * [`ft_memset`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_memset.c)
-* [ft_bzero`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_bzero.c)
+* [`ft_bzero`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_bzero.c)
 * [`ft_memcpy`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_memcpy.c)
 * [`ft_memmove`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_memmove.c)
 * [`ft_memchr`]
