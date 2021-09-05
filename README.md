@@ -36,7 +36,7 @@ This library is meant to be expanded on throughout the year to help with future 
 * ft_tolower :ballot_box_with_check:
 
 ### Additional Functions
-* ft_substr
+* ft_substr :ballot_box_with_check:
 * ft_strjoin
 * ft_strtrim
 * ft_split
