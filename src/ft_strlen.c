@@ -7,10 +7,3 @@ int	ft_strlen(char *str)
 		i++;
 	return (i);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	printf("%d\n", ft_strlen("this is a string"));
-// }
