@@ -24,14 +24,3 @@ char	*ft_strrchr(const char *str, int c)
 	}
 	return (0);
 }
-
-// #include <stdio.h>
-
-// int main(int argc, char const *argv[])
-// {
-// 	printf("%s\n", ft_strrchr("sstring?!", 's'));
-
-// 	return 0;
-// }
-
-
