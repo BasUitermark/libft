@@ -13,50 +13,50 @@ This library is meant to be expanded on throughout the year to help with future 
 
 ### Libc Functions
 
-* ft_memset :ballot_box_with_check:
-* ft_bzero :ballot_box_with_check:
-* ft_memcpy :ballot_box_with_check:
-* ft_memmove :ballot_box_with_check:
-* ft_memchr
-* ft_memcmp
-* ft_strlen :ballot_box_with_check:
-* ft_strlcpy 
-* ft_strlcat 
-* ft_strchr :ballot_box_with_check:
-* ft_strrchr :ballot_box_with_check:
-* ft_strnstr :ballot_box_with_check:
-* ft_strncmp :ballot_box_with_check:
-* ft_atoi 
-* ft_isalpha :ballot_box_with_check:
-* ft_isdigit :ballot_box_with_check:
-* ft_isalnum :ballot_box_with_check:
-* ft_isascii :ballot_box_with_check:
-* ft_isprint
-* ft_toupper :ballot_box_with_check:
-* ft_tolower :ballot_box_with_check:
+* `ft_memset`(libft/src/ft_memset.c) :ballot_box_with_check:
+* `ft_bzero` :ballot_box_with_check:
+* `ft_memcpy` :ballot_box_with_check:
+* `ft_memmove` :ballot_box_with_check:
+* `ft_memchr`
+* `ft_memcmp`
+* `ft_strlen` :ballot_box_with_check:
+* `ft_strlcpy` 
+* `ft_strlcat` 
+* `ft_strchr` :ballot_box_with_check:
+* `ft_strrchr` :ballot_box_with_check:
+* `ft_strnstr` :ballot_box_with_check:
+* `ft_strncmp` :ballot_box_with_check:
+* `ft_atoi` 
+* `ft_isalpha` :ballot_box_with_check:
+* `ft_isdigit` :ballot_box_with_check:
+* `ft_isalnum` :ballot_box_with_check:
+* `ft_isascii` :ballot_box_with_check:
+* `ft_isprint`
+* `ft_toupper` :ballot_box_with_check:
+* `ft_tolower` :ballot_box_with_check:
 
 ### Additional Functions
-* ft_substr :ballot_box_with_check:
-* ft_strjoin
-* ft_strtrim
-* ft_split
-* ft_itoa
-* ft_strmapi :ballot_box_with_check:
-* ft_putchar_fd
-* ft_putstr_fd
-* ft_putendl_fd
-* ft_putnbr_fd 
+* `ft_substr` :ballot_box_with_check:
+* `ft_strjoin`
+* `ft_strtrim`
+* `ft_split`
+* `ft_itoa`
+* `ft_strmapi` :ballot_box_with_check:
+* `ft_putchar_fd`
+* `ft_putstr_fd`
+* `ft_putendl_fd`
+* `ft_putnbr_fd` 
 ### Bonus
-* ft_lstnew
-* ft_lstadd_front
-* ft_lstsize
-* ft_lstlast
-* ft_lstadd_back
-* ft_lstdelone
-* ft_lstclear
-* ft_lstiter
-* ft_lstmap
+* `ft_lstnew`
+* `ft_lstadd_front`
+* `ft_lstsize`
+* `ft_lstlast`
+* `ft_lstadd_back`
+* `ft_lstdelone`
+* `ft_lstclear`
+* `ft_lstiter`
+* `ft_lstmap`
 ### Voluntary
 
-* itoa_base
-* intlength
+* `itoa_base`
+* `intlength`
