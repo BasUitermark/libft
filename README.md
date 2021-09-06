@@ -16,21 +16,21 @@ This library is meant to be expanded on throughout the year to help with future 
 * [`ft_bzero`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_bzero.c)
 * [`ft_memcpy`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_memcpy.c)
 * [`ft_memmove`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_memmove.c)
-* [`ft_memchr`]
-* [`ft_memcmp`]
+* [`ft_memchr`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_memchr.c)
+* [`ft_memcmp`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_memcmp.c)
 * [`ft_strlen`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_strlen.c)
-* [`ft_strlcpy`] 
-* [`ft_strlcat`] 
+* [`ft_strlcpy`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_strlcpy.c)
+* [`ft_strlcat`]
 * [`ft_strchr`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_strchr.c)
 * [`ft_strrchr`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_strrchr.c)
 * [`ft_strnstr`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_strnstr.c)
 * [`ft_strncmp`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_strncmp.c)
-* [`ft_atoi`] 
+* [`ft_atoi`]
 * [`ft_isalpha`](https://github.com/Pr1malCodam/libft/edit/master/src/ft_isalpha.c)
 * [`ft_isdigit`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_isdigit.c)
 * [`ft_isalnum`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_isalnum.c)
 * [`ft_isascii`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_isascii.c)
-* [`ft_isprint`]
+* [`ft_isprint`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_isprint.c)
 * [`ft_toupper`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_toupper.c)
 * [`ft_tolower`](https://github.com/Pr1malCodam/libft/blob/master/src/ft_tolower.c)
 	

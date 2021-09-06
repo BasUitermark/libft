@@ -10,13 +10,3 @@ int	ft_strcmp(char *s1, char *s2)
 	else
 		return (*s1 - *s2);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char	string1[] = "his one is long";
-// 	char	string2[] = "this one is long";
-
-// 	printf("%d\n", ft_strcmp(string1, string2));
-// }
