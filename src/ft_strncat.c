@@ -16,3 +16,14 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 	*dest = '\0';
 	return (temp);
 }
+
+#include <stdio.h>
+
+int	main(void)
+{
+	char	string1[] = "Hello";
+	char	string2[] = " world!";
+
+	ft_strncat(string1, string2, 6);
+	printf("%s\n", string1);
+}
