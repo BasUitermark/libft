@@ -2,20 +2,25 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t n)
 {
-	size_t	i;
-	size_t	j;
+	size_t i;
+	size_t j;
+
 	i = 0;
 	j = 0;
-
-	while (dst[j] != '\0')
-		j++;
-	while (++i < n)
+	while (dst[i])
+		i++;
+	if (n < i)
 	{
-		dst[j++] = src[i++];
-		if(src[i + 1] == '\0')
-			return (i + 1);
+		while (src[j])
+			j++;
+		return (n + j);
 	}
-	dst[++j] = '\0';
+	while (n > 0 && i < n - 1 && src[j])
+		dst[i++] = src[j++];
+	dst[i] = '\0';
+	while (src[j++])
+		i++;
+	return (i);
 }
 
 #include <stdio.h>
@@ -24,7 +29,7 @@ int main(int argc, char const *argv[])
 {
 	char s1[] = "a string";
 	char s2[] = "this is ";
-	printf("%ld\n", ft_strlcat(s2, s1, 8));
+	printf("%ld\n", ft_strlcat(s2, s1, 12));
 	printf("%s\n", s2);
 	return 0;
 }
