@@ -38,8 +38,8 @@ This library is meant to be expanded on throughout the year to help with future 
 * [`ft_substr`](src/ft_substr.c)
 * [`ft_strjoin`]
 * [`ft_strtrim`]
-* [`ft_split`]
-* [`ft_itoa`]
+* [`ft_split`](src/ft_split.c)
+* [`ft_itoa`](src/ft_itoa.c)
 * [`ft_strmapi`](src/ft_strmapi.c)
 * [`ft_striteri`](src/ft_striteri.c)
 * [`ft_putchar_fd`](src/ft_putchar_fd.c)
@@ -59,5 +59,5 @@ This library is meant to be expanded on throughout the year to help with future 
 * [`ft_lstmap`]
 	
 ### Voluntary
-* [`itoa_base`]
+* [`itoa_base`](src/ft_itoa_base.c)
 * [`intlength`]
