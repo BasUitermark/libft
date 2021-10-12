@@ -13,9 +13,9 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	return (NULL);
 }
 
-int main(int argc, char const *argv[])
-{
-	char thing[] = "yeeeeeeeees";
-	printf("%s\n", ft_memchr(thing, 'e', sizeof(thing)));
-	return 0;
-}
+// int main(int argc, char const *argv[])
+// {
+// 	char thing[] = "yeeeeeeeees";
+// 	printf("%s\n", ft_memchr(thing, 'e', sizeof(thing)));
+// 	return 0;
+// }

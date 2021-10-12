@@ -1,15 +1,32 @@
 #include "libft.h"
 
+int	ft_intlen(int n)
+{
+	int	i;
+
+	i = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		i++;
+	while (n)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
+}
+
 char	*ft_itoa(int n)
 {
-	int			i;
-	char		*str;
-	int			len;
-	int			ng;
+	int		i;
+	char	*str;
+	int		ng;
 
 	i = ft_intlen(n);
-	len = n;
-	str = (char *)ft_calloc(i, sizeof(char));
+	printf("%d\n", i);
+	str = (char *)ft_calloc(i + 1, sizeof(char));
+	printf("%s\n", str);
 	if (n < 0)
 	{
 		ng = 1;
@@ -28,10 +45,10 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-// #include <stdio.h>
+#include <stdio.h>
 
-// int main(int argc, char const *argv[])
-// {
-// 	printf("%s\n", ft_itoa(0));
-// 	return 0;
-// }
+int main(int argc, char const *argv[])
+{
+	printf("%s\n", ft_itoa(0));
+	return 0;
+}

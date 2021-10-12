@@ -7,9 +7,3 @@ int	ft_isalpha(int c)
 	else
 		return (0);
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	printf("%d\n", ft_isalpha('a'));
-// 	return 0;
-// }

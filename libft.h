@@ -17,20 +17,6 @@ typedef enum e_base
 /*Character Functions */
 
 /**
- * Checks if a character is uppercase.
- * @param c The charachter to be checked.
- * @return Returns a 1 if true, else a 0.
- */
-int		ft_isupper(int c);
-
-/**
- * Checks if a character is lowercase.
- * @param c The charachter to be checked.
- * @return Returns a 1 if true, else a 0.
- */
-int		ft_islower(int c);
-
-/**
  * Checks if a character is a digit.
  * @param c The charachter to be checked.
  * @return Returns a 1 if true, else a 0.
@@ -111,10 +97,12 @@ t_size	ft_strlcpy(char *dst, const char *src, size_t size);
  * @param *src The source string
  * @return Returns the length of the string it tried to make.
  */
-t_size	ft_strlcat(char *dst, const char *src, size_t n)
+t_size	ft_strlcat(char *dst, const char *src, size_t n);
 
 /**
  * Searches for the first occurence of c in str.
+ * If str is empty or c = '\0' it gives back a pointer
+ * to the end of str.
  * @param *str The string to search through.
  * @param c The character to search for.
  * @return Returns a pointer to c in str.
@@ -162,12 +150,52 @@ char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
 
 /**
+ * Duplicates a string to a new string.
+ * @param *str String to be duplicated.
+ * @return Returns a new string.
+ */
+char	*ft_strdup(const char *str);
+
+/**
+ * Copies part of a string to a new string.
+ * @param *s String to take from.
+ * @param start Starting point where to copy from.
+ * @param len Amount of characters to copy.
+ */
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+/**
  * Concatenates two string to one new string.
  * @param *s1 First string to concatenate.
  * @param *s2 Second string to concatenate.
  * @return Returns the concatenated string.
  */
 char	*ft_strjoin(char const *s1, char const *s2);
+
+/**
+ * Returns a new string with "set" removed from
+ * the beginning and end of the *s.
+ * @param *s1 The string to trim from
+ * @param *set The set of characters to remove.
+ * @return Returns a new string with set trimmed from the string.
+ */
+char	*ft_strtrim(char const *s1, char const *set);
+
+/**
+ * Applies function f to each character of s and copies it
+ * to a new string
+ * @param *s String to apply function f to.
+ * @param *f Function to apply.
+ * @return Returns a new string with f applied to it.
+ */
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+/**
+ * Applies function f to each character of s.
+ * @param *s String to apply function f to.
+ * @param *f Function to apply.
+ */
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 /*Memory Functions */
 
@@ -219,6 +247,13 @@ int		ft_memcmp(const void *str1, const void *str2, size_t n);
  */
 void	*ft_memmove(void *dst, const void *src, size_t len);
 
+/**
+ * Converts a string to an integer
+ * @param String to be converted.
+ * @return Returns an integer conversion of str.
+ */
+int		ft_atoi(const char *str);
+
 /* Filedescriptor Functions */
 
 /**
@@ -240,21 +275,36 @@ void	ft_putstr_fd(char *s, int fd);
  * @param *s The string to be outputted.
  * @param fd The filedescriptor.
  */
-void	ft_putndl_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
 
 /**
  * Outputs the integer ’n’ to the given file descriptor.
  * @param n The integer to be outputted.
  * @param fd The filedescriptor.
  */
-void	ft_putnbr(int n, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 /* Extra Functions */
+
+/**
+ * Checks if a character is uppercase.
+ * @param c The charachter to be checked.
+ * @return Returns a 1 if true, else a 0.
+ */
+int		ft_isupper(int c);
+
+/**
+ * Checks if a character is lowercase.
+ * @param c The charachter to be checked.
+ * @return Returns a 1 if true, else a 0.
+ */
+int		ft_islower(int c);
 
 /**
  * Checks for the amount of characters in an int.
  * @param n The int to check.
  * @return Returns the lenght of an int including the minus if there.
  */
-int	ft_intlen(int n);
+int		ft_intlen(int n);
+
 #endif

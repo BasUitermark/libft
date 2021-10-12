@@ -20,12 +20,12 @@ This library is meant to be expanded on throughout the year to help with future 
 * [`ft_memcmp`](ft_memcmp)
 * [`ft_strlen`](ft_strlen)
 * [`ft_strlcpy`](ft_strlcpy)
-* [`ft_strlcat`]
+* [`ft_strlcat`](ft_strlcat)
 * [`ft_strchr`](ft_strchr)
 * [`ft_strrchr`](ft_strrchr)
 * [`ft_strnstr`](ft_strnstr)
 * [`ft_strncmp`](ft_strncmp)
-* [`ft_atoi`]
+* [`ft_atoi`](ft_atoi)
 * [`ft_isalpha`](ft_isalpha)
 * [`ft_isdigit`](ft_isdigit)
 * [`ft_isalnum`](ft_isalnum)
@@ -33,17 +33,19 @@ This library is meant to be expanded on throughout the year to help with future 
 * [`ft_isprint`](ft_isprint)
 * [`ft_toupper`](ft_toupper)
 * [`ft_tolower`](ft_tolower)
+* [`ft_calloc`](ft_calloc)
+* [`ft_strdup`](ft_strdup)
 	
 ### Additional Functions
-* [`ft_substr`]
-* [`ft_strjoin`]
+* [`ft_substr`](ft_substr)
+* [`ft_strjoin`](ft_strjoin)
 * [`ft_strtrim`]
-* [`ft_itoa`]
-* [`ft_strmapi`]
-* [`ft_striteri`]
-* [`ft_putchar_fd`]
-* [`ft_putstr_fd`]
-* [`ft_putendl_fd`]
+* [`ft_itoa`](ft_itoa)
+* [`ft_strmapi`](ft_strmapi)
+* [`ft_striteri`](ft_striteri)
+* [`ft_putchar_fd`](ft_putchar_fd)
+* [`ft_putstr_fd`](ft_putstr_fd)
+* [`ft_putendl_fd`](ft_putendl_fd)
 * [`ft_putnbr_fd`](ft_putnbr_fd)
 	
 ### Bonus
@@ -59,8 +61,6 @@ This library is meant to be expanded on throughout the year to help with future 
 	
 ### Extra
 * [`ft_itoa_base`]
-* [`ft_intlength`]
+* [`ft_intlength`](ft_intlen)
 * [`ft_islower`](ft_islower)
 * [`ft_isupper`](ft_isupper)
-
-Descriptions

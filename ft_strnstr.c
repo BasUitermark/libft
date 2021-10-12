@@ -11,7 +11,7 @@ char	*ft_strnstr(const char	*big, const char *little, t_size len)
 		return ((char *)big);
 	while (big[++i] != '\0' && i < len)
 	{
-		while (big[i] == little[j])
+		while (big[i] == little[j] && i < len)
 		{
 			i++;
 			j++;
@@ -22,3 +22,9 @@ char	*ft_strnstr(const char	*big, const char *little, t_size len)
 	}
 	return (NULL);
 }
+
+// int main(int argc, char const *argv[])
+// {
+// 	printf("%s\n", ft_strnstr("lorem ipsum dolor sit amet", "ipsumm", 30));
+// 	return 0;
+// }

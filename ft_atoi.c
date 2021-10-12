@@ -11,9 +11,10 @@ int	ft_atoi(const char *str)
 	out = 0;
 	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
 		i++;
-	if (str[i] == '-')
+	if (str[i] == '-' || str[i] == '+')
 	{
-		min *= -1;
+		if (str[i] == '-')
+			min *= -1;
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
@@ -24,8 +25,8 @@ int	ft_atoi(const char *str)
 	return (out * min);
 }
 
-int main(int argc, char const *argv[])
-{
-	printf("%d\n", ft_atoi("NULL"));
-	return 0;
-}
+// int main(int argc, char const *argv[])
+// {
+// 	printf("%d\n", ft_atoi("+548"));
+// 	return 0;
+// }

@@ -8,7 +8,12 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 	while (++i < n)
 	{
 		if (((char *)str1)[i] != ((char *)str2)[i])
-			return (str1 - str2);
+		{
+			if (((unsigned char *)str1)[i] > ((unsigned char *)str2)[i])
+				return (1);
+			if (((unsigned char *)str1)[i] < ((unsigned char *)str2)[i])
+				return (-1);
+		}
 	}
 	return (0);
 }

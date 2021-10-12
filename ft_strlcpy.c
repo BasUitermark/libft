@@ -1,21 +1,43 @@
 #include "libft.h"
 
-t_size	ft_strlcpy(char *dst, const char *src, size_t size)
-{
-	t_size	i;
+// t_size	ft_strlcpy(char *dst, const char *src, size_t n)
+// {
+// 	t_size	srclen;
 
-	i = -1;
-	while (src[++i] != '\0' && dst[i] != '\0' && ++i < size)
-		dst[i] = src[i];
-	return (size);
+// 	srclen = ft_strlen(src);
+// 	if (!n)
+// 		return (srclen);
+// 	ft_memcpy(dst, src, srclen + 1);
+// 	dst[n - 1] = '\0';
+// 	return (srclen);
+// }
+
+t_size	ft_strlcpy(char *dst, const char *src, size_t n)
+{
+	t_size	srclen;
+
+	srclen = ft_strlen(src);
+	if (!n)
+		return (srclen);
+	if (srclen + 1 < n)
+		ft_memcpy(dst, src, srclen + 1);
+	 else if (n != 0)
+	{
+		ft_memcpy(dst, src, n - 1);
+		dst[n - 1] = '\0';
+	}
+	return (srclen);
 }
 
 // int main(int argc, char const *argv[])
 // {
-// 	const char *string1 = "string to copy";
-// 	char string2[30];
+// 	char	*dest;
 
-// 	printf("%zu\n", ft_strlcpy(string2, string1, 0));
-// 	printf("%s\n", string2);
+// 	if (!(dest = (char *)malloc(sizeof(*dest) * 15)))
+// 		return (0);
+// 	ft_memset(dest, 0, 15);
+// 	ft_memset(dest, 'r', 6);
+// 	printf("%zu\n", ft_strlcpy(dest, "lorem ipsum", 3));
+// 	printf("%s\n", dest);
 // 	return 0;
 // }
