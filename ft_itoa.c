@@ -17,26 +17,25 @@ int	ft_intlen(int n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char	*ft_out(int n)
 {
-	int		i;
+	t_size	i;
 	char	*str;
 	int		ng;
 
 	i = ft_intlen(n);
-	printf("%d\n", i);
 	str = (char *)ft_calloc(i + 1, sizeof(char));
-	printf("%s\n", str);
+	if (!str)
+		return (NULL);
 	if (n < 0)
 	{
 		ng = 1;
 		n *= -1;
 	}
-	if (!str)
-		return (NULL);
-	str[i + 1] = '\0';
-	while (i--)
+	str[i] = '\0';
+	while (n)
 	{
+		i--;
 		str[i] = n % 10 + '0';
 		n /= 10;
 	}
@@ -45,10 +44,22 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-#include <stdio.h>
-
-int main(int argc, char const *argv[])
+char	*ft_itoa(int n)
 {
-	printf("%s\n", ft_itoa(0));
-	return 0;
+	char	*out;
+
+	if (n == 0)
+		return (ft_strdup("0"));
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	out = ft_out(n);
+	return (out);
 }
+
+// #include <stdio.h>
+
+// int main(int argc, char const *argv[])
+// {
+// 	printf("%s\n", ft_itoa(-623));
+// 	return 0;
+// }

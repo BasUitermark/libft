@@ -4,18 +4,20 @@ void	*ft_memchr(const void *str, int c, size_t n)
 {
 	t_size	i;
 
-	i = -1;
-	while (++i < n)
+	i = 0;
+	while (i < n)
 	{
-		if (((char *)str)[i] == c)
-			return ((char *)str + i);
+		if (((unsigned char *)str)[i] == (unsigned char)c)
+			return ((void *)str + i);
+		i++;
 	}
 	return (NULL);
 }
 
 // int main(int argc, char const *argv[])
 // {
-// 	char thing[] = "yeeeeeeeees";
-// 	printf("%s\n", ft_memchr(thing, 'e', sizeof(thing)));
+// 	int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
+
+// 	printf("%s\n", (char *)ft_memchr(tab, -1, 7));
 // 	return 0;
 // }

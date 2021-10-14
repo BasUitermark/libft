@@ -8,7 +8,7 @@ char	*ft_strrchr(const char *str, int c)
 	while (len > 0)
 	{
 		len--;
-		if (str[len] == c)
+		if (str[len] == (unsigned char)c)
 			return (&((char *)str)[len]);
 	}
 	return (NULL);

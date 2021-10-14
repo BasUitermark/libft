@@ -4,24 +4,24 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	t_size	i;
 
-	i = -1;
+	i = 0;
+	if (dst == NULL && src == NULL)
+		return (NULL);
 	if (src < dst)
 	{
-		while (len-- > 0)
+		while (len > 0)
+		{
+			--len;
 			((char *)dst)[len] = ((char *)src)[len];
+		}
 	}
 	else
 	{
-		while (++i < len)
+		while (i < len)
+		{
 			((char *)dst)[i] = ((char *)src)[i];
+			i++;
+		}
 	}
 	return (dst);
 }
-
-// int	main(void)
-// {
-// 	char text[] = "abcde";
-
-// 	ft_memmove(&text[3], text, 2);
-// 	printf("%s\n", text);
-// }

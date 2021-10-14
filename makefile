@@ -8,14 +8,11 @@ AR		= ar rcs
 SRCS = ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
-		ft_intlen.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
 		ft_isdigit.c \
-		ft_islower.c \
 		ft_isprint.c \
-		ft_isupper.c \
 		ft_itoa.c \
 		ft_memchr.c \
 		ft_memcmp.c \
@@ -43,16 +40,23 @@ SRCS = ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c
 
+B_SRCS = ft_lstnew.c
+
 OBJS = $(SRCS:.c=.o)
+B_OBJS = $(B_SRCS:.c=.o)
 
 all: $(NAME)
 
-%.o: %.c
+.c.o:
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
 		$(AR) $(NAME) $(OBJS)
 		echo "(INFO) Library ($(NAME)) created!"
+
+bonus:	
+$(NAME): $(OBJS) $(B_OBJS)
+		$(AR) $(NAME) $(OBJS)
 
 clean:
 		rm -f $(OBJS)

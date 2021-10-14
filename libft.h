@@ -307,4 +307,19 @@ int		ft_islower(int c);
  */
 int		ft_intlen(int n);
 
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+
+/**
+ * Creates a new element in the list.
+ * The variable ’content’ is initialized with
+ * the value of the parameter ’content’.
+ * @param *content 
+ * @return returns the new list entry.
+ */
+t_list	*ft_lstnew(void *content);
+
 #endif

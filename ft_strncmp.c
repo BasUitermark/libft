@@ -7,7 +7,7 @@ int	ft_strncmp(const char *str1, const char *str2, size_t n)
 	i = 0;
 	if (n == 0)
 		return (0);
-	while (i < n)
+	while (i < n && (str1[i] != '\0' || str2[i] != '\0'))
 	{
 		if (str1[i] != str2[i])
 			return (((unsigned char)str1[i]) - ((unsigned char)str2[i]));
@@ -15,9 +15,3 @@ int	ft_strncmp(const char *str1, const char *str2, size_t n)
 	}
 	return (0);
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	printf("%d\n", ft_strncmp("test\200", "test\0", 6));
-// 	return 0;
-// }
