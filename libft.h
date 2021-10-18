@@ -352,4 +352,20 @@ t_list	*ft_lstlast(t_list *lst);
  */
 void	ft_lstadd_back(t_list **lst, t_list *new);
 
+/**
+ * @brief 
+ * 
+ * @param lst 
+ * @param del 
+ */
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
+
+/**
+ * @brief 
+ * 
+ * @param lst 
+ * @param del 
+ */
+void	ft_lstclear(t_list **lst, void (*del)(void*));
+
 #endif
