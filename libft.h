@@ -307,6 +307,8 @@ int		ft_islower(int c);
  */
 int		ft_intlen(int n);
 
+/* BONUS */
+
 typedef struct s_list
 {
 	void			*content;
@@ -317,9 +319,37 @@ typedef struct s_list
  * Creates a new element in the list.
  * The variable ’content’ is initialized with
  * the value of the parameter ’content’.
- * @param *content 
- * @return returns the new list entry.
+ * @param *content The content to create the list with
+ * @return returns The new list entry.
  */
 t_list	*ft_lstnew(void *content);
+
+/**
+ * Adds the element "new" to the beginning of the list.
+ * @param **lst Pointer to the first link in the list.
+ * @param *new The element to be added to the front.
+ */
+void	ft_lstadd_front(t_list **lst, t_list *new);
+
+/**
+ * Counts the number of elements in the list;
+ * @param *lst The beginning of the list.
+ * @return The size of "lst".
+ */
+int		ft_lstsize(t_list *lst);
+
+/**
+ * Returns the last element of the list.
+ * @param *lst The beginning of the list.
+ * @return The last element.
+*/
+t_list	*ft_lstlast(t_list *lst);
+
+/**
+ * Adds the element "new" to the end of the list.
+ * @param **lst Pointer to the first link in the list.
+ * @param *new The element to be added to the back.
+ */
+void	ft_lstadd_back(t_list **lst, t_list *new);
 
 #endif

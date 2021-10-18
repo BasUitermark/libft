@@ -40,26 +40,31 @@ SRCS = ft_atoi.c \
 		ft_tolower.c \
 		ft_toupper.c
 
-B_SRCS = ft_lstnew.c
+B_SRCS = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c
 
 OBJS = $(SRCS:.c=.o)
+
 B_OBJS = $(B_SRCS:.c=.o)
 
 all: $(NAME)
 
-.c.o:
+.o: .c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
 		$(AR) $(NAME) $(OBJS)
 		echo "(INFO) Library ($(NAME)) created!"
 
-bonus:	
-$(NAME): $(OBJS) $(B_OBJS)
-		$(AR) $(NAME) $(OBJS)
+bonus: $(B_OBJS)
+		$(AR) $(NAME) $(OBJS) $(B_OBJS)
+		echo "(INFO) Library ($(NAME)) with bonus created!"
 
 clean:
-		rm -f $(OBJS)
+		rm -f $(OBJS) $(B_OBJS)
 		echo "(INFO) All object removed!"
 
 fclean: clean
@@ -68,4 +73,4 @@ fclean: clean
 
 re:		fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: all, clean, fclean, re, bonus
