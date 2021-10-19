@@ -25,12 +25,3 @@ char	*ft_strnstr(const char	*big, const char *little, t_size len)
 	}
 	return (NULL);
 }
-
-// #include <string.h>
-
-// int main(int argc, char const *argv[])
-// {
-// 	// printf("%s\n", strnstr(NULL, "fake", 3));
-// 	printf("%s\n", ft_strnstr(NULL, "fake", 3));
-// 	return 0;
-// }

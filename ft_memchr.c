@@ -13,11 +13,3 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	}
 	return (NULL);
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
-
-// 	printf("%s\n", (char *)ft_memchr(tab, -1, 7));
-// 	return 0;
-// }

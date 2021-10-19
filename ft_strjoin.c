@@ -16,12 +16,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	out[i + j] = '\0';
 	return (out);
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	char	s1[] = "lorem ipsum";
-// 	char	s2[] = "dolor sit amet";
-
-// 	printf("%s\n", ft_strjoin(s1, s2));
-// 	return 0;
-// }

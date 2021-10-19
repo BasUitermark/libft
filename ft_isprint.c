@@ -6,14 +6,3 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	int i = 123;
-// 	while (i <= 127)
-// 	{
-// 		printf("%d\n", ft_isprint(i));
-// 		i++;
-// 	}
-// 	return 0;
-// }

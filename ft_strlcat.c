@@ -15,15 +15,3 @@ t_size	ft_strlcat(char *dst, const char *src, size_t n)
 	}
 	return (srclen + dstlen);
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	char	dest[30];
-// 	char	*src = (char *)"AAAAAAAAA";
-
-// 	ft_memset(dest, 0, 30);
-// 	ft_memset(dest, 'B', 4);
-// 	printf("%zu\n", ft_strlcat(dest, src, 6));
-// 	printf("%s\n", dest);
-// 	return 0;
-// }

@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int	ft_front(char const *s1, char const *set)
+static int	ft_front(char const *s1, char const *set)
 {
 	t_size	i;
 
@@ -14,7 +14,7 @@ int	ft_front(char const *s1, char const *set)
 	return (i);
 }
 
-int	ft_back(char const *s1, char const *set)
+static int	ft_back(char const *s1, char const *set)
 {
 	t_size	len;
 
@@ -39,9 +39,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(""));
 	return (ft_substr(s1, front, back - front));
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	printf("%s\n", ft_strtrim("lorem \n ipsum \t dolor \n sit \t amet", " "));
-// 	return 0;
-// }

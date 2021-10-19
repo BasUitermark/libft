@@ -17,9 +17,3 @@ char	*ft_strchr(const char *str, int c)
 	}
 	return (NULL);
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	printf("%s\n", ft_strchr("", '\0'));
-// 	return 0;
-// }

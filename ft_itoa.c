@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int	ft_intlen(int n)
+static int	ft_intlen(int n)
 {
 	int	i;
 
@@ -17,7 +17,7 @@ int	ft_intlen(int n)
 	return (i);
 }
 
-char	*ft_out(int n)
+static char	*ft_out(int n)
 {
 	t_size	i;
 	char	*str;
@@ -60,6 +60,6 @@ char	*ft_itoa(int n)
 
 // int main(int argc, char const *argv[])
 // {
-// 	printf("%s\n", ft_itoa(-623));
+// 	printf("%s\n", ft_itoa(-0));
 // 	return 0;
 // }

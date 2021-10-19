@@ -24,9 +24,3 @@ int	ft_atoi(const char *str)
 	}
 	return (out * min);
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	printf("%d\n", ft_atoi("+548"));
-// 	return 0;
-// }

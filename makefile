@@ -46,7 +46,9 @@ B_SRCS = ft_lstnew.c \
 		ft_lstlast.c \
 		ft_lstadd_back.c \
 		ft_lstdelone.c \
-		ft_lstclear.c
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c 
 
 OBJS = $(SRCS:.c=.o)
 
@@ -54,14 +56,14 @@ B_OBJS = $(B_SRCS:.c=.o)
 
 all: $(NAME)
 
-.o: .c
+%.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
 		$(AR) $(NAME) $(OBJS)
 		echo "(INFO) Library ($(NAME)) created!"
 
-bonus: $(B_OBJS)
+bonus: $(OBJS) $(B_OBJS)
 		$(AR) $(NAME) $(OBJS) $(B_OBJS)
 		echo "(INFO) Library ($(NAME)) with bonus created!"
 
