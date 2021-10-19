@@ -1,18 +1,9 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 
 typedef size_t	t_size;
-
-typedef enum e_base
-{
-	BINARY = 2,
-	OCTAL = 8,
-	DECIMAL = 10,
-	HEXADECIMAL = 16
-}	t_base;
 
 /*Character Functions */
 
@@ -78,7 +69,7 @@ size_t	ft_strlen(const char *str);
 
 /**
  * Sets n amount of characters in s to '\0'.
- * @param *s The string to be changed
+ * @param *s The pointer to the address to be changed
  * @param n The amount of characters to be changed.
  */
 void	ft_bzero(void *s, size_t n);
@@ -300,13 +291,6 @@ int		ft_isupper(int c);
  */
 int		ft_islower(int c);
 
-/**
- * Checks for the amount of characters in an int.
- * @param n The int to check.
- * @return Returns the lenght of an int including the minus if there.
- */
-int		ft_intlen(int n);
-
 /* BONUS */
 
 typedef struct s_list
@@ -353,35 +337,32 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 
 /**
- * @brief 
- * 
- * @param lst 
- * @param del 
+ * Frees the given element of lst with del.
+ * @param lst The element to be freed.
+ * @param del The function that frees.
  */
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 
 /**
- * @brief 
- * 
- * @param lst 
- * @param del 
+ * Frees the entire linked list with del.
+ * @param lst The list to be freed
+ * @param del The function that frees.
  */
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 
 /**
- * @brief 
- * 
- * @param lst 
- * @param f 
+ * Iterates the function f over lst.
+ * @param lst The lst to iterate over.
+ * @param f The function to use with the iteration.
  */
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
 /**
- * @brief 
- * 
- * @param lst 
- * @param f 
- * @param del 
+ * Iterates the function f over lst and creates a new list with 
+ * the result of the iteration. If allocation fails, del frees the list.
+ * @param lst The lst to iterate over.
+ * @param f The function to use with the iteration.
+ * @param del The function that frees.
  */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 

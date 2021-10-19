@@ -7,7 +7,7 @@ static int	ft_front(char const *s1, char const *set)
 	i = 0;
 	while (s1[i])
 	{
-		if (ft_strchr(set, s1[i]) == 0)
+		if (!ft_strchr(set, s1[i]))
 			break ;
 		i++;
 	}
@@ -21,7 +21,7 @@ static int	ft_back(char const *s1, char const *set)
 	len = ft_strlen(s1);
 	while (len > 0)
 	{
-		if (ft_strchr(set, s1[len - 1]) == 0)
+		if (!ft_strchr(set, s1[len - 1]))
 			break ;
 		len--;
 	}
