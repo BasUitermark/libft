@@ -80,18 +80,3 @@ char	**ft_split(char const *s, char c)
 	out = ft_array(wcount, s, c, out);
 	return (out);
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	char	**new;
-// 	int		i;
-
-// 	i = 0;
-// 	new = ft_split("this is a string", ' ');
-// 	while (new[i])
-// 	{
-// 		printf("%s\n", new[i]);
-// 		i++;
-// 	}
-// 	return 0;
-// }

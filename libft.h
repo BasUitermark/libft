@@ -61,6 +61,13 @@ int		ft_tolower(int c);
 /*String Functions */
 
 /**
+ * Converts a string to an integer
+ * @param String to be converted.
+ * @return Returns an integer conversion of str.
+ */
+int		ft_atoi(const char *str);
+
+/**
  * Checks the length of the string.
  * @param *str The string to be checked
  * @return Returns the lenght of the string
@@ -238,13 +245,6 @@ int		ft_memcmp(const void *str1, const void *str2, size_t n);
  */
 void	*ft_memmove(void *dst, const void *src, size_t len);
 
-/**
- * Converts a string to an integer
- * @param String to be converted.
- * @return Returns an integer conversion of str.
- */
-int		ft_atoi(const char *str);
-
 /* Filedescriptor Functions */
 
 /**
@@ -274,22 +274,6 @@ void	ft_putendl_fd(char *s, int fd);
  * @param fd The filedescriptor.
  */
 void	ft_putnbr_fd(int n, int fd);
-
-/* Extra Functions */
-
-/**
- * Checks if a character is uppercase.
- * @param c The charachter to be checked.
- * @return Returns a 1 if true, else a 0.
- */
-int		ft_isupper(int c);
-
-/**
- * Checks if a character is lowercase.
- * @param c The charachter to be checked.
- * @return Returns a 1 if true, else a 0.
- */
-int		ft_islower(int c);
 
 /* BONUS */
 
