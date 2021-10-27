@@ -172,7 +172,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
  * Concatenates two string to one new string.
  * @param *s1 First string to concatenate.
  * @param *s2 Second string to concatenate.
- * @return Returns the concatenated string.
+ * @return Returns a new concatenated string.
  */
 char	*ft_strjoin(char const *s1, char const *s2);
 
