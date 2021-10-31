@@ -8,11 +8,16 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = ft_strlen(s1);
 	j = ft_strlen(s2);
+	if (!s1)
+	{
+		// strdup s2 ... return
+	}
 	out = (char *)ft_calloc(i + j + 2, sizeof(char));
 	if (!out)
 		return (NULL);
 	ft_strlcpy(out, s1, i + 1);
 	ft_strlcat(&out[i], s2, j + 1);
 	out[i + j] = '\0';
+	free(s1);
 	return (out);
 }
