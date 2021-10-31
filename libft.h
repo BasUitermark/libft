@@ -2,6 +2,7 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 typedef size_t	t_size;
 
@@ -11,7 +12,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
-/*Character Functions */
+//==Character Functions==//
 
 /**
  * Checks if a character is a digit.
@@ -46,6 +47,20 @@ int		ft_isprint(int c);
  */
 int		ft_isascii(int c);
 /**
+ * @brief 
+ * 
+ * @param c 
+ * @return int 
+ */
+int		ft_isupper(int c);
+/**
+ * @brief 
+ * 
+ * @param c 
+ * @return int 
+ */
+int		ft_islower(int c);
+/**
  * Changes a lowercase character to an uppercase charachter.
  * @param c The charachter to be changed.
  * @return Returns the character in uppercase.
@@ -59,6 +74,18 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 //==String Functions ==//
 /**
+ * @brief 
+ * 
+ * @param str 
+ */
+void	ft_strtolower(char *str);
+/**
+ * @brief 
+ * 
+ * @param str 
+ */
+void	ft_strtoupper(char *str);
+/**
  * Converts a string to an integer
  * @param String to be converted.
  * @return Returns an integer conversion of str.
@@ -70,6 +97,14 @@ int		ft_atoi(const char *str);
  * @return Returns the lenght of the string
  */
 size_t	ft_strlen(const char *str);
+/**
+ * @brief 
+ * 
+ * @param str 
+ * @param c 
+ * @return size_t 
+ */
+size_t	ft_strlenc(char const *str, char c);
 /**
  * Sets n amount of characters in s to '\0'.
  * @param *s The pointer to the address to be changed
@@ -219,6 +254,35 @@ int		ft_memcmp(const void *str1, const void *str2, size_t n);
  * @param len The amount of bytes to copy.
  */
 void	*ft_memmove(void *dst, const void *src, size_t len);
+//==Math Functions==//
+/**
+ * @brief 
+ * 
+ * @param n 
+ * @return int 
+ */
+int		ft_abs(int n);
+/**
+ * @brief 
+ * 
+ * @param n 
+ * @return int 
+ */
+int		ft_neg(int n);
+/**
+ * @brief 
+ * 
+ * @param n 
+ * @return int 
+ */
+int		ft_pos(int n);
+/**
+ * @brief 
+ * 
+ * @param n 
+ * @return int 
+ */
+int		ft_intlen(int n);
 //==Filedescriptor Functions ==//
 /**
  * Outputs the character ’c’ to the given file descriptor.
@@ -244,7 +308,7 @@ void	ft_putendl_fd(char *s, int fd);
  * @param fd The filedescriptor.
  */
 void	ft_putnbr_fd(int n, int fd);
-//==BONUS==//
+//==Linked List==//
 /**
  * Creates a new element in the list.
  * The variable ’content’ is initialized with
@@ -306,28 +370,15 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 //==TOD==//
 /**
  * MAKE TYPEDEF
- * isupper
- * islower
- * intlen
  * itoa_base
- * abs
  * prime
  * next prime
  * strncat
  * strncpy
- * isspace
- * strtoupper
- * strtolower
  * strchrn
  * strrev
- * putchar
- * putbnr
- * putendl
- * putstr
- * neg
  * min
  * max
- * pos
  * pow
  * sqrt
  * realloc

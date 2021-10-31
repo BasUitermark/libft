@@ -1,22 +1,5 @@
 #include "libft.h"
 
-static int	ft_intlen(int n)
-{
-	int	i;
-
-	i = 0;
-	if (n == 0)
-		return (i + 1);
-	if (n < 0)
-		i++;
-	while (n)
-	{
-		n /= 10;
-		i++;
-	}
-	return (i);
-}
-
 static char	*ft_out(int n)
 {
 	int		i;
