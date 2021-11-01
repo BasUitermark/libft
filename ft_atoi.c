@@ -7,7 +7,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	min = 1;
 	out = 0;
-	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == ' ')
+	while (ft_isspace(str[i]))
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -15,7 +15,7 @@ int	ft_atoi(const char *str)
 			min *= -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (ft_isdigit(str[i]))
 	{
 		out = out * 10 + (str[i] - '0');
 		i++;

@@ -18,16 +18,6 @@ static t_size	ft_wcount(char const *s, char c)
 	return (wcount);
 }
 
-static t_size	ft_strlenc(char const *s, char c)
-{
-	t_size	i;
-
-	i = 0;
-	while (s[i] != '\0' && s[i] != c)
-		i++;
-	return (i);
-}
-
 static void	ft_clean(char **out)
 {
 	t_size	i;
