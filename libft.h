@@ -20,6 +20,13 @@ typedef struct s_list
  * @return Returns a 1 if true, else a 0.
  */
 int		ft_isdigit(int c);
+
+/**
+ * @param c
+ * @return
+*/
+int		ft_isspace(int c);
+
 /**
  * Checks if a character is either a digit, a lowercase 
  * or an uppercase character.
@@ -72,7 +79,9 @@ int		ft_toupper(int c);
  * @return Returns the character in lowercase.
  */
 int		ft_tolower(int c);
+
 //==String Functions ==//
+
 /**
  * @brief 
  * 
@@ -164,6 +173,12 @@ int		ft_strncmp(const char *str1, const char *str2, size_t n);
  */
 char	*ft_itoa(int n);
 /**
+ * Returns a string representation of an unsigned integer.
+ * @param n The unsigned nteger input.
+ * @return Returns str which is a char *.
+ */
+char	*ft_itoa_u(unsigned int n);
+/**
  * Splits a string into multiple substrings by means of a delimiter.
  * @param *s The string to be split.
  * @param c The delimiter on which point to split.
@@ -211,7 +226,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
  * @param *f Function to apply.
  */
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+
 //==Memory Functions==//
+
 /**
  * Sets a count amount of bytes * the size of the variable;
  * @param count The amount of characters
@@ -254,7 +271,9 @@ int		ft_memcmp(const void *str1, const void *str2, size_t n);
  * @param len The amount of bytes to copy.
  */
 void	*ft_memmove(void *dst, const void *src, size_t len);
+
 //==Math Functions==//
+
 /**
  * @brief 
  * 
@@ -283,7 +302,9 @@ int		ft_pos(int n);
  * @return int 
  */
 int		ft_intlen(int n);
+
 //==Filedescriptor Functions ==//
+
 /**
  * Outputs the character ’c’ to the given file descriptor.
  * @param c The character to be outputted.
@@ -308,7 +329,9 @@ void	ft_putendl_fd(char *s, int fd);
  * @param fd The filedescriptor.
  */
 void	ft_putnbr_fd(int n, int fd);
-//==Linked List==//
+
+//==Linked List Functions==//
+
 /**
  * Creates a new element in the list.
  * The variable ’content’ is initialized with
@@ -367,7 +390,9 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
  * @param del The function that frees.
  */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-//==TOD==//
+
+//==TODO==//
+
 /**
  * freenull (free's pointer and sets it to NULL)
  * MAKE TYPEDEF
