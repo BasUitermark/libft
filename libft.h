@@ -20,6 +20,13 @@ typedef struct s_list
  * @return Returns a 1 if true, else a 0.
  */
 int		ft_isdigit(int c);
+
+/**
+ * @param c
+ * @return
+*/
+int		ft_isspace(int c);
+
 /**
  * Checks if a character is either a digit, a lowercase 
  * or an uppercase character.
