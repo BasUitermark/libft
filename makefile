@@ -73,7 +73,7 @@ OBJS_DIR = objs/
 $(OBJS_DIR)%.o: %.c
 	@mkdir -p $(OBJS_DIR)
 	@echo "Compiling: $<"
-	@$(CC) $(CFLAGS) -c -o $@ $<
+	@$(CC) $(CFLAGS) -c $< -o $@ 
 
 $(NAME): $(OBJECTS_PREFIXED)
 		@$(AR) $(NAME) $(OBJECTS_PREFIXED)
@@ -83,7 +83,7 @@ all: $(NAME)
 
 bonus: $(OBJECTS_BONUS_PREFIXED)
 		@$(AR) $(NAME) $(OBJECTS_BONUS_PREFIXED)
-		@echo "Library (\$(NAME) with bonus created!"
+		@echo "Library $(NAME) with bonus created!"
 
 clean:
 		@rm -rf $(OBJS_DIR)
