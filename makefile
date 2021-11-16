@@ -63,29 +63,35 @@ B_SRCS = ft_lstnew.c \
 		ft_lstmap.c
 
 OBJS = $(SRCS:.c=.o)
+OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
 
 B_OBJS = $(B_SRCS:.c=.o)
+OBJECTS_BONUS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
+
+OBJS_DIR = objs/
+
+$(OBJS_DIR)%.o: %.c
+	@mkdir -p $(OBJS_DIR)
+	@echo "Compiling: $<"
+	@$(CC) $(CFLAGS) -c -o $@ $<
+
+$(NAME): $(OBJECTS_PREFIXED)
+		@$(AR) $(NAME) $(OBJECTS_PREFIXED)
+		@echo "Library $(NAME) created!"
 
 all: $(NAME)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c -o $@ $<
-
-$(NAME): $(OBJS)
-		$(AR) $(NAME) $(OBJS)
-		echo "(INFO) Library ($(NAME)) created!"
-
-bonus: $(OBJS) $(B_OBJS)
-		$(AR) $(NAME) $(OBJS) $(B_OBJS)
-		echo "(INFO) Library ($(NAME)) with bonus created!"
+bonus: $(OBJECTS_BONUS_PREFIXED)
+		@$(AR) $(NAME) $(OBJECTS_BONUS_PREFIXED)
+		@echo "Library (\$(NAME) with bonus created!"
 
 clean:
-		rm -f $(OBJS) $(B_OBJS)
-		echo "(INFO) All object removed!"
+		@rm -rf $(OBJS_DIR)
+		@echo "All object removed!"
 
 fclean: clean
-		rm -f $(NAME)
-		echo "(INFO) Library ($(NAME)) removed!"
+		@rm -f $(NAME)
+		@echo "Library $(NAME) removed!"
 
 re:		fclean all
 
