@@ -174,10 +174,17 @@ int		ft_strncmp(const char *str1, const char *str2, size_t n);
 char	*ft_itoa(int n);
 /**
  * Returns a string representation of an unsigned integer.
- * @param n The unsigned nteger input.
+ * @param n The unsigned integer input.
  * @return Returns str which is a char *.
  */
 char	*ft_itoa_u(unsigned int n);
+/**
+ * Returns a string representation of an unsigned integer.
+ * @param n The unsigned nteger input.
+ * @param base_set The base characters to use.
+ * @return Returns str which is a char *.
+ */
+char	*ft_itoa_base(size_t n, char const *base_set);
 /**
  * Splits a string into multiple substrings by means of a delimiter.
  * @param *s The string to be split.

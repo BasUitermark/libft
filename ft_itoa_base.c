@@ -1,41 +1,36 @@
 #include "libft.h"
-
-static char	*ft_out(int n)
+int	ft_baselen(size_t n, size_t base)
 {
-	int		i;
-	char	*str;
-	int		ng;
+	int	i;
 
-	ng = 0;
-	i = ft_intlen(n);
-	str = (char *)ft_calloc(i + 1, sizeof(char));
-	if (!str)
-		return (NULL);
-	if (n < 0)
+	i = 0;
+	while (n)
 	{
-		ng = 1;
-		n *= -1;
+		n /= base;
+		i++;
 	}
-	str[i] = '\0';
-	while (i)
-	{
-		i--;
-		str[i] = n % 10 + '0';
-		n /= 10;
-	}
-	if (ng)
-		str[0] = '-';
-	return (str);
+	return (i);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa_base(size_t n, char const *base_set)
 {
-	char	*out;
+	char		*out;
+	size_t		i;
+	size_t		base;
 
 	if (n == 0)
 		return (ft_strdup("0"));
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	out = ft_out(n);
+	base = ft_strlen(base_set);
+	i = ft_baselen(n, base);
+	out = (char *)ft_calloc(i + 1, sizeof(char));
+	if (!out)
+		return (NULL);
+	out[i] = '\0';
+	while (i)
+	{
+		i--;
+		out[i] = base_set[n % base];
+		n /= base;
+	}
 	return (out);
 }

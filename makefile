@@ -20,6 +20,7 @@ SRCS = ft_abs.c \
 		ft_isprint.c \
 		ft_itoa.c \
 		ft_itoa_u.c \
+		ft_itoa_base.c \
 		ft_memchr.c \
 		ft_memcmp.c \
 		ft_memcpy.c \
