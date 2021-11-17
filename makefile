@@ -1,7 +1,6 @@
 CC		= gcc
 CFLAGS	= -Wall -Werror -Wextra
 NAME	= libft.a
-SRCDIR	= .
 
 AR		= ar rcs
 
@@ -21,6 +20,15 @@ SRCS = ft_abs.c \
 		ft_itoa.c \
 		ft_itoa_u.c \
 		ft_itoa_base.c \
+		ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+		ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
 		ft_memchr.c \
 		ft_memcmp.c \
 		ft_memcpy.c \
@@ -52,46 +60,33 @@ SRCS = ft_abs.c \
 		ft_tolower.c \
 		ft_toupper.c
 
-B_SRCS = ft_lstnew.c \
-		ft_lstadd_front.c \
-		ft_lstsize.c \
-		ft_lstlast.c \
-		ft_lstadd_back.c \
-		ft_lstdelone.c \
-		ft_lstclear.c \
-		ft_lstiter.c \
-		ft_lstmap.c
-
 OBJS = $(SRCS:.c=.o)
+OBJS_DIR = objs/
 OBJECTS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
 
-B_OBJS = $(B_SRCS:.c=.o)
-OBJECTS_BONUS_PREFIXED = $(addprefix $(OBJS_DIR), $(OBJS))
-
-OBJS_DIR = objs/
+GREEN = \033[1;32m
+RED = \033[1;31m
+MAGENTA = \033[1;35m
+RESET = \033[0m
 
 $(OBJS_DIR)%.o: %.c
 	@mkdir -p $(OBJS_DIR)
-	@echo "Compiling: $<"
+	@echo "$(MAGENTA)Compiling: $(RESET)$<"
 	@$(CC) $(CFLAGS) -c $< -o $@ 
 
 $(NAME): $(OBJECTS_PREFIXED)
 		@$(AR) $(NAME) $(OBJECTS_PREFIXED)
-		@echo "Library $(NAME) created!"
+		@echo "$(GREEN)Library $(NAME) created!$(RESET)"
 
 all: $(NAME)
 
-bonus: $(OBJECTS_BONUS_PREFIXED)
-		@$(AR) $(NAME) $(OBJECTS_BONUS_PREFIXED)
-		@echo "Library $(NAME) with bonus created!"
-
 clean:
 		@rm -rf $(OBJS_DIR)
-		@echo "All object removed!"
+		@echo "$(RED)All object removed!$(RESET)"
 
 fclean: clean
 		@rm -f $(NAME)
-		@echo "Library $(NAME) removed!"
+		@echo "$(RED)Library $(NAME) removed!$(RESET)"
 
 re:		fclean all
 

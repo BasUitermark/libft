@@ -317,25 +317,25 @@ int		ft_intlen(int n);
  * @param c The character to be outputted.
  * @param fd The filedescriptor.
  */
-void	ft_putchar_fd(char c, int fd);
+size_t	ft_putchar_fd(char c, int fd);
 /**
  * Outputs the string *s to the given file descriptor.
  * @param *s The string to be outputted.
  * @param fd The filedescriptor.
  */
-void	ft_putstr_fd(char *s, int fd);
+size_t	ft_putstr_fd(char *s, int fd);
 /**
  * Outputs the string ’s’ to the given file descriptor, followed by a newline.
  * @param *s The string to be outputted.
  * @param fd The filedescriptor.
  */
-void	ft_putendl_fd(char *s, int fd);
+size_t	ft_putendl_fd(char *s, int fd);
 /**
  * Outputs the integer ’n’ to the given file descriptor.
  * @param n The integer to be outputted.
  * @param fd The filedescriptor.
  */
-void	ft_putnbr_fd(int n, int fd);
+size_t	ft_putnbr_fd(int n, int fd);
 
 //==Linked List Functions==//
 

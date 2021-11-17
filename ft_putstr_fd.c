@@ -1,13 +1,16 @@
 #include "libft.h"
 
-void	ft_putstr_fd(char *str, int fd)
+size_t	ft_putstr_fd(char *str, int fd)
 {
 	t_size	i;
+	t_size	out;
 
 	i = 0;
+	out = 0;
 	while (str[i])
 	{
-		ft_putchar_fd(str[i], fd);
+		out += ft_putchar_fd(str[i], fd);
 		i++;
 	}
+	return (out);
 }
