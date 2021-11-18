@@ -336,6 +336,13 @@ size_t	ft_putendl_fd(char *s, int fd);
  * @param fd The filedescriptor.
  */
 size_t	ft_putnbr_fd(int n, int fd);
+/**
+ * Outputs the integer base of ’n’ to the given file descriptor.
+ * @param n The integer to be outputted.
+ * @param fd The filedescriptor.
+ * @param base The base value
+ */
+size_t	ft_putnbr_base_fd(size_t n, int fd, size_t base);
 
 //==Linked List Functions==//
 

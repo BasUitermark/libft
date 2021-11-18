@@ -1,6 +1,6 @@
 #include "../libft.h"
 
-int	ft_baselen(size_t n, size_t base)
+static int	ft_baselen(size_t n, size_t base)
 {
 	int	i;
 

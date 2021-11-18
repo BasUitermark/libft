@@ -43,6 +43,7 @@ SRCS	= $(addprefix src/, $(addsuffix .c, \
 		ft_putchar_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
+		ft_putnbr_base_fd \
 		ft_putstr_fd \
 		ft_split \
 		ft_strchr \
@@ -81,7 +82,7 @@ RESET = \033[0m
 
 #Compile structure with messages
 $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c
-	@echo "$(MAGENTA)Compiling: $(RESET)$<"
+	@echo "$(MAGENTA)Compiling... $(RESET)"
 	@mkdir -p $(DIR_OBJS)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
