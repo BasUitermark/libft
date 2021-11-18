@@ -1,97 +1,111 @@
+#Filename library
 NAME		= libft.a
 
+#Directory names
 DIR_SRCS	= src
 DIR_OBJS	= objs
 
-SRCS_DIRS	= $(addprefix $(DIR_SRCS)/, $(dir))
-OBJS_DIRS	= $(addprefix $(DIR_OBJS)/, $(dir))
-SRCS		= src/ft_abs.c \
-		src/ft_atoi.c \
-		src/ft_bzero.c \
-		src/ft_calloc.c \
-		src/ft_intlen.c \
-		src/ft_isalnum.c \
-		src/ft_isalpha.c \
-		src/ft_isascii.c \
-		src/ft_isdigit.c \
-		src/ft_islower.c \
-		src/ft_isspace.c \
-		src/ft_isupper.c \
-		src/ft_isprint.c \
-		src/ft_itoa.c \
-		src/ft_itoa_u.c \
-		src/ft_itoa_base.c \
-		src/ft_lstnew.c \
-		src/ft_lstadd_front.c \
-		src/ft_lstsize.c \
-		src/ft_lstlast.c \
-		src/ft_lstadd_back.c \
-		src/ft_lstdelone.c \
-		src/ft_lstclear.c \
-		src/ft_lstiter.c \
-		src/ft_lstmap.c \
-		src/ft_memchr.c \
-		src/ft_memcmp.c \
-		src/ft_memcpy.c \
-		src/ft_memmove.c \
-		src/ft_memset.c \
-		src/ft_neg.c \
-		src/ft_pos.c \
-		src/ft_putchar_fd.c \
-		src/ft_putendl_fd.c \
-		src/ft_putnbr_fd.c \
-		src/ft_putstr_fd.c \
-		src/ft_split.c \
-		src/ft_strchr.c \
-		src/ft_strclen.c \
-		src/ft_strdup.c \
-		src/ft_striteri.c \
-		src/ft_strjoin.c \
-		src/ft_strlcat.c \
-		src/ft_strlcpy.c \
-		src/ft_strlen.c \
-		src/ft_strmapi.c \
-		src/ft_strncmp.c \
-		src/ft_strnstr.c \
-		src/ft_strrchr.c \
-		src/ft_strtolower.c \
-		src/ft_strtoupper.c \
-		src/ft_strtrim.c \
-		src/ft_substr.c \
-		src/ft_tolower.c \
-		src/ft_toupper.c
-OBJS		= $(subst $(DIR_SRCS), $(DIR_OBJS), $(SRCS:.c=.o))
+#Sourcefiles
+#Note: Only filename needed. "addprefix" and "addsuffix" add filepath and filetype.
+SRCS	= $(addprefix src/, $(addsuffix .c, \
+		ft_abs \
+		ft_atoi \
+		ft_bzero \
+		ft_calloc \
+		ft_intlen \
+		ft_isalnum \
+		ft_isalpha \
+		ft_isascii \
+		ft_isdigit \
+		ft_islower \
+		ft_isspace \
+		ft_isupper \
+		ft_isprint \
+		ft_itoa \
+		ft_itoa_u \
+		ft_itoa_base \
+		ft_lstnew \
+		ft_lstadd_front \
+		ft_lstsize \
+		ft_lstlast \
+		ft_lstadd_back \
+		ft_lstdelone \
+		ft_lstclear \
+		ft_lstiter \
+		ft_lstmap \
+		ft_memchr \
+		ft_memcmp \
+		ft_memcpy \
+		ft_memmove \
+		ft_memset \
+		ft_neg \
+		ft_pos \
+		ft_putchar_fd \
+		ft_putendl_fd \
+		ft_putnbr_fd \
+		ft_putstr_fd \
+		ft_split \
+		ft_strchr \
+		ft_strclen \
+		ft_strdup \
+		ft_striteri \
+		ft_strjoin \
+		ft_strlcat \
+		ft_strlcpy \
+		ft_strlen \
+		ft_strmapi \
+		ft_strncmp \
+		ft_strnstr \
+		ft_strrchr \
+		ft_strtolower \
+		ft_strtoupper \
+		ft_strtrim \
+		ft_substr \
+		ft_tolower \
+		ft_toupper))
 
+#Object destination for .c files
+OBJS	= $(subst $(DIR_SRCS), $(DIR_OBJS), $(SRCS:.c=.o))
+
+#Variable declerations for compiling and flags
 CC			= gcc
 CFLAGS		= -Wall -Werror -Wextra
-AR		= ar rcs
-RM		= rm -f
+AR			= ar rcs
+RM			= rm -f
 
+#Color codes
 GREEN = \033[1;32m
 RED = \033[1;31m
 MAGENTA = \033[1;35m
 RESET = \033[0m
 
+#Compile structure with messages
 $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c
-	@mkdir -p $(DIR_OBJS) $(OBJS_DIRS)
-	@echo -e "$(MAGENTA)Compiling: $(RESET)$<"
-	@$(CC) $(CFLAGS) -c $< -o $@ 
+	@echo "$(MAGENTA)Compiling: $(RESET)$<"
+	@mkdir -p $(DIR_OBJS)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
+#Library structure
 $(NAME): $(OBJS)
 		@$(AR) $(NAME) $(OBJS)
-		@echo -e "$(GREEN)Library $(NAME) created!$(RESET)"
+		@echo "$(GREEN)Library $(NAME) created!$(RESET)"
 
+#Standard make command
 all: $(NAME)
 
+#Remove object files
 clean:
 		@$(RM) $(OBJS)
 		@$(RM) -r $(DIR_OBJS)
-		@echo -e "$(RED)All objects removed!$(RESET)"
+		@echo "$(RED)All objects removed!$(RESET)"
 
+#Remove object files and library file
 fclean: clean
 		@$(RM) $(NAME)
-		@echo -e "$(RED)Library $(NAME) removed!$(RESET)"
+		@echo "$(RED)Library $(NAME) removed!$(RESET)"
 
+#Remove object files, library file and remake library
 re:		fclean all
 
+#
 .PHONY: all, clean, fclean, re
