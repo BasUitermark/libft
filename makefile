@@ -5,6 +5,9 @@ NAME		= libft.a
 DIR_SRCS	= src
 DIR_OBJS	= objs
 
+SRCS_DIRS	= $(addprefix $(DIR_SRCS)/, $(dir))
+OBJS_DIRS	= $(addprefix $(DIR_OBJS)/, $(dir))
+
 #Sourcefiles
 #Note: Only filename needed. "addprefix" and "addsuffix" add filepath and filetype.
 SRCS	= $(addprefix src/, $(addsuffix .c, \
@@ -82,14 +85,14 @@ RESET = \033[0m
 
 #Compile structure with messages
 $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c
-	@echo "$(MAGENTA)Compiling... $(RESET)"
-	@mkdir -p $(DIR_OBJS)
+	@echo -e "$(MAGENTA)Compiling: $(RESET)$<"
+	@mkdir -p $(DIR_OBJS) $(OBJS_DIRS)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 #Library structure
 $(NAME): $(OBJS)
 		@$(AR) $(NAME) $(OBJS)
-		@echo "$(GREEN)Library $(NAME) created!$(RESET)"
+		@echo -e "$(GREEN)Library $(NAME) created!$(RESET)"
 
 #Standard make command
 all: $(NAME)
@@ -98,12 +101,12 @@ all: $(NAME)
 clean:
 		@$(RM) $(OBJS)
 		@$(RM) -r $(DIR_OBJS)
-		@echo "$(RED)All objects removed!$(RESET)"
+		@echo -e "$(RED)All objects removed!$(RESET)"
 
 #Remove object files and library file
 fclean: clean
 		@$(RM) $(NAME)
-		@echo "$(RED)Library $(NAME) removed!$(RESET)"
+		@echo -e "$(RED)Library $(NAME) removed!$(RESET)"
 
 #Remove object files, library file and remake library
 re:		fclean all

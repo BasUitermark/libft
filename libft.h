@@ -342,7 +342,7 @@ size_t	ft_putnbr_fd(int n, int fd);
  * @param fd The filedescriptor.
  * @param base The base value
  */
-size_t	ft_putnbr_base_fd(size_t n, int fd, size_t base);
+size_t	ft_putnbr_base_fd(size_t n, int fd, char const *base_format);
 
 //==Linked List Functions==//
 

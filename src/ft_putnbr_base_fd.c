@@ -1,30 +1,21 @@
 #include "../libft.h"
-static int	ft_baselen(size_t n, size_t base)
-{
-	int	i;
 
-	i = 0;
-	while (n)
-	{
-		n /= base;
-		i++;
-	}
-	return (i);
-}
 
-size_t	ft_putnbr_base_fd(size_t n, int fd, size_t base)
+size_t	ft_putnbr_base_fd(size_t n, int fd, char const *base_format)
 {
 	size_t	out;
-	char	*hex;
+	size_t	base;
 
-	hex = "0123456789abcdef";
+	base = ft_strlen(base_format);
 	out = 0;
-	if (n > 15)
+	if (n < base)
 	{
-		ft_putnbr_base_fd(n / base, fd, base);
-		ft_putnbr_base_fd(n % base, fd, base);
+		out += ft_putchar_fd(base_format[n % base], fd);
 	}
 	else
-		ft_putchar_fd(hex[n % base], fd);
-	return (ft_baselen(n, base));
+	{
+		out += ft_putnbr_base_fd(n / base, fd, base_format);
+		out += ft_putnbr_base_fd(n % base, fd, base_format);
+	}
+	return (out);
 }
