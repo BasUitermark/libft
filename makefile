@@ -85,7 +85,11 @@ RESET = \033[0m
 
 #Compile structure with messages
 $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c
+<<<<<<< HEAD
 	@printf "$(MAGENTA)Compiling: $(RESET)$<\n"
+=======
+	@echo "$(MAGENTA)Compiling: $(RESET)$<"
+>>>>>>> 0a7d2a31c1620fcb954d13b10a03d309e5248fba
 	@mkdir -p $(DIR_OBJS) $(OBJS_DIRS)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
