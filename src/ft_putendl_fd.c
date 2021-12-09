@@ -1,4 +1,4 @@
-#include "../libft.h"
+#include "../include/libft.h"
 
 size_t	ft_putendl_fd(char *s, int fd)
 {

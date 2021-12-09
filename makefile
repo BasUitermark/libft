@@ -85,14 +85,14 @@ RESET = \033[0m
 
 #Compile structure with messages
 $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c
-	@echo -e "$(MAGENTA)Compiling: $(RESET)$<"
+	@printf "$(MAGENTA)Compiling: $(RESET)$<\n"
 	@mkdir -p $(DIR_OBJS) $(OBJS_DIRS)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 #Library structure
 $(NAME): $(OBJS)
 		@$(AR) $(NAME) $(OBJS)
-		@echo -e "$(GREEN)Library $(NAME) created!$(RESET)"
+		@echo "$(GREEN)Library $(NAME) created!$(RESET)"
 
 #Standard make command
 all: $(NAME)
@@ -101,12 +101,12 @@ all: $(NAME)
 clean:
 		@$(RM) $(OBJS)
 		@$(RM) -r $(DIR_OBJS)
-		@echo -e "$(RED)All objects removed!$(RESET)"
+		@echo "$(RED)All objects removed!$(RESET)"
 
 #Remove object files and library file
 fclean: clean
 		@$(RM) $(NAME)
-		@echo -e "$(RED)Library $(NAME) removed!$(RESET)"
+		@echo "$(RED)Library $(NAME) removed!$(RESET)"
 
 #Remove object files, library file and remake library
 re:		fclean all

@@ -1,4 +1,4 @@
-#include "../libft.h"
+#include "../include/libft.h"
 
 static t_size	ft_wcount(char const *s, char c)
 {
@@ -7,7 +7,7 @@ static t_size	ft_wcount(char const *s, char c)
 
 	wcount = 0;
 	i = 0;
-	while (s[i] != '\0')
+	while (!s[i])
 	{
 		if (s[i] != c)
 			wcount++;
@@ -28,6 +28,7 @@ static void	ft_clean(char **out)
 		free(out[i]);
 		i++;
 	}
+	free (out);
 	return ;
 }
 
@@ -48,7 +49,6 @@ static char	**ft_array(t_size wcount, char const *s, char c, char **out)
 		if (!out[i])
 		{
 			ft_clean(out);
-			free (out);
 			return (NULL);
 		}
 		ft_strlcpy(out[i], &s[j], lcount + 1);
