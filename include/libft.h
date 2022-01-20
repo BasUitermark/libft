@@ -10,16 +10,11 @@
 
 /**
  * freenull (free's pointer and sets it to NULL)
- * MAKE TYPEDEF
- * itoa_base
  * prime
  * next prime
- * strncat
  * strncpy
  * strchrn
  * strrev
- * min
- * max
  * pow
  * sqrt
  * realloc

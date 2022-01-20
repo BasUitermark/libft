@@ -7,7 +7,7 @@
 
 /**
  * Checks if a character is a digit.
- * @param c The charachter to be checked.
+ * @param c The character to be checked.
  * @return Returns a 1 if true, else a 0.
  */
 int		ft_isdigit(int c);
@@ -21,7 +21,7 @@ int		ft_isspace(int c);
 /**
  * Checks if a character is either a digit, a lowercase 
  * or an uppercase character.
- * @param c The charachter to be checked.
+ * @param c The character to be checked.
  * @return Returns a 1 if true, else a 0.
  */
 int		ft_isalnum(int c);
@@ -29,21 +29,21 @@ int		ft_isalnum(int c);
 /**
  * Checks if a character is either a lowercase 
  * or an uppercase character.
- * @param c The charachter to be checked.
+ * @param c The character to be checked.
  * @return Returns a 1 if true, else a 0.
  */
 int		ft_isalpha(int c);
 
 /**
  * Checks if a character is printable.
- * @param c The charachter to be checked.
+ * @param c The character to be checked.
  * @return Returns a 1 if true, else a 0.
  */
 int		ft_isprint(int c);
 
 /**
  * Checks if a character is an ASCII character.
- * @param c The charachter to be checked.
+ * @param c The character to be checked.
  * @return Returns a 1 if true, else a 0.
  */
 int		ft_isascii(int c);
@@ -65,15 +65,15 @@ int		ft_isupper(int c);
 int		ft_islower(int c);
 
 /**
- * Changes a lowercase character to an uppercase charachter.
- * @param c The charachter to be changed.
+ * Changes a lowercase character to an uppercase character.
+ * @param c The character to be changed.
  * @return Returns the character in uppercase.
  */
 int		ft_toupper(int c);
 
 /**
- * Changes an uppercase character to a lowercase charachter.
- * @param c The charachter to be changed.
+ * Changes an uppercase character to a lowercase character.
+ * @param c The character to be changed.
  * @return Returns the character in lowercase.
  */
 int		ft_tolower(int c);
@@ -104,7 +104,7 @@ int		ft_atoi(const char *str);
 /**
  * Checks the length of the string.
  * @param *str The string to be checked
- * @return Returns the lenght of the string
+ * @return Returns the length of the string
  */
 size_t	ft_strlen(const char *str);
 
@@ -115,7 +115,7 @@ size_t	ft_strlen(const char *str);
  * @param c 
  * @return size_t 
  */
-size_t	ft_strlenc(char const *str, char c);
+size_t	ft_strclen(char const *str, char c);
 
 /**
  * Sets n amount of characters in s to '\0'.
@@ -132,6 +132,8 @@ void	ft_bzero(void *s, size_t n);
  */
 t_size	ft_strlcpy(char *dst, const char *src, size_t size);
 
+char	*ft_strncat(char *dest, const char *src, unsigned int n);
+
 /**
  * Concatenates the source to the destination string.
  * @param *dst The destination string
@@ -141,7 +143,7 @@ t_size	ft_strlcpy(char *dst, const char *src, size_t size);
 t_size	ft_strlcat(char *dst, const char *src, size_t n);
 
 /**
- * Searches for the first occurence of c in str.
+ * Searches for the first occurrence of c in str.
  * If str is empty or c = '\0' it gives back a pointer
  * to the end of str.
  * @param *str The string to search through.
@@ -151,7 +153,7 @@ t_size	ft_strlcat(char *dst, const char *src, size_t n);
 char	*ft_strchr(const char *str, int c);
 
 /**
- * Searches for the last occurence of c in str.
+ * Searches for the last occurrence of c in str.
  * @param *str The string to search through.
  * @param c The character to search for.
  * @return Returns a pointer to c in str.
@@ -159,7 +161,7 @@ char	*ft_strchr(const char *str, int c);
 char	*ft_strrchr(const char *str, int c);
 
 /**
- * Searches for the for first occurence of the string little in
+ * Searches for the for first occurrence of the string little in
  * string big for len number of bytes.
  * @param *big The main string to read from.
  * @param *little The string to search for.
@@ -192,7 +194,7 @@ char	*ft_itoa_u(unsigned int n);
 
 /**
  * Returns a string representation of an unsigned integer.
- * @param n The unsigned nteger input.
+ * @param n The unsigned integer input.
  * @param base_set The base characters to use.
  * @return Returns str which is a char *.
  */
@@ -271,7 +273,7 @@ void	*ft_calloc(size_t count, size_t size);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 /**
- * Searches for the first occurence of c in str.
+ * Searches for the first occurrence of c in str.
  * @param *str The string to search through.
  * @param c The character to search for.
  * @param n The amount of bytes to search through.
@@ -375,7 +377,7 @@ size_t	ft_putnbr_fd(int n, int fd);
  */
 size_t	ft_putnbr_base_fd(size_t n, int fd, char const *base_format);
 
-//==Linked List Functions==//
+//== Linked List Functions ==//
 
 /**
  * Creates a new element in the list.
@@ -443,5 +445,25 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
  * @param del The function that frees.
  */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+//=== Doubly Linked List Functions ===//
+
+t_dlist	*ft_dlstnew(void *content);
+void	ft_dlstadd_front(t_dlist **lst, t_dlist *new_item);
+void	ft_dlstadd_back(t_dlist **lst, t_dlist *new_item);
+t_dlist	*ft_dlstlast(t_dlist *lst);
+t_dlist	*ft_dlstfirst(t_dlist *lst);
+int		ft_dlstsize(t_dlist *lst);
+void	ft_dlstinsert_after(t_dlist *prev_node, t_dlist *new_item);
+void	ft_dlstdel_node(t_dlist **lst, t_dlist *del_node);
+
+//=== Print Functions ===//
+
+int		ft_printf(const char *str, ...);
+void	ft_printlist(t_list *list);
+void	ft_printdlist(t_dlist *list);
+void	ft_printcarray(char **str);
+void	ft_printiarray(int **array, size_t lines, size_t size);
+int		ft_fprintf(int fd, const char *str, ...);
 
 #endif

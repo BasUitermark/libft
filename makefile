@@ -15,6 +15,15 @@ SRCS	= $(addprefix src/, $(addsuffix .c, \
 		ft_atoi \
 		ft_bzero \
 		ft_calloc \
+		ft_dlstadd_back \
+		ft_dlstadd_front \
+		ft_dlstdel_node \
+		ft_dlstfirst \
+		ft_dlstinsert_after \
+		ft_dlstlast \
+		ft_dlstnew \
+		ft_dlstsize \
+		ft_fprintf \
 		ft_intlen \
 		ft_isalnum \
 		ft_isalpha \
@@ -43,6 +52,11 @@ SRCS	= $(addprefix src/, $(addsuffix .c, \
 		ft_memset \
 		ft_neg \
 		ft_pos \
+		ft_printcarray \
+		ft_printiarray \
+		ft_printlist \
+		ft_printdlist \
+		ft_printf \
 		ft_putchar_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
@@ -58,6 +72,7 @@ SRCS	= $(addprefix src/, $(addsuffix .c, \
 		ft_strlcpy \
 		ft_strlen \
 		ft_strmapi \
+		ft_strncat \
 		ft_strncmp \
 		ft_strnstr \
 		ft_strrchr \
@@ -80,23 +95,21 @@ RM			= rm -f
 #Color codes
 GREEN = \033[1;32m
 RED = \033[1;31m
+BLUE = \033[1;34m
 MAGENTA = \033[1;35m
+BOLD = \033[1m
 RESET = \033[0m
 
 #Compile structure with messages
 $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c
-<<<<<<< HEAD
-	@printf "$(MAGENTA)Compiling: $(RESET)$<\n"
-=======
-	@echo "$(MAGENTA)Compiling: $(RESET)$<"
->>>>>>> 0a7d2a31c1620fcb954d13b10a03d309e5248fba
+	@printf "$(MAGENTA)Compiling: $(BLUE)$<\n$(RESET)"
 	@mkdir -p $(DIR_OBJS) $(OBJS_DIRS)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 #Library structure
 $(NAME): $(OBJS)
 		@$(AR) $(NAME) $(OBJS)
-		@echo "$(GREEN)Library $(NAME) created!$(RESET)"
+		@printf "\n$(GREEN)Library $(NAME) created!$(RESET)\n"
 
 #Standard make command
 all: $(NAME)
@@ -105,12 +118,12 @@ all: $(NAME)
 clean:
 		@$(RM) $(OBJS)
 		@$(RM) -r $(DIR_OBJS)
-		@echo "$(RED)All objects removed!$(RESET)"
+		@printf "\n$(RED)All objects removed!$(RESET)\n"
 
 #Remove object files and library file
 fclean: clean
 		@$(RM) $(NAME)
-		@echo "$(RED)Library $(NAME) removed!$(RESET)"
+		@printf "\n$(RED)Library $(NAME) removed!$(RESET)\n"
 
 #Remove object files, library file and remake library
 re:		fclean all
