@@ -3,8 +3,10 @@
 
 //=== Libraries ===//
 # include <unistd.h>
+# include <stdbool.h>
 # include <stdarg.h>
 # include <stdlib.h>
+# include <fcntl.h>
 
 //=== Types ====//
 typedef size_t				t_size;
@@ -27,6 +29,7 @@ typedef unsigned long long	t_u64;
 # define DECIMAL "0123456789"
 # define HEX_LOWER "0123456789abcdef"
 # define HEX_UPPER "0123456789ABCDEF"
+# define BUFFER_SIZE 4
 
 //=== Structs ===//
 
@@ -42,6 +45,12 @@ typedef struct s_dlist
 	struct s_dlist	*next;
 	struct s_dlist	*prev;
 }	t_dlist;
+
+typedef struct s_data_store
+{
+	char	*readstr;
+	char	*r_main;
+}t_data_store;
 
 //=== Print Colors ==//
 

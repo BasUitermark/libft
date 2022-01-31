@@ -3,10 +3,15 @@
 char	*ft_strdup(const char *str)
 {
 	char	*out;
+	size_t	len;
 
-	out = (char *)ft_calloc(ft_strlen(str) + 1, sizeof(char));
+	len = ft_strlen(str);
+	if (!str)
+		return (NULL);
+	out = (char *)ft_calloc(len + 1, sizeof(char));
 	if (!out)
 		return (NULL);
-	ft_strlcpy(out, str, ft_strlen(str) + 1);
+	ft_strlcpy(out, str, len + 1);
+	out[len] = '\0';
 	return (out);
 }

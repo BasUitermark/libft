@@ -24,6 +24,7 @@ SRCS	= $(addprefix src/, $(addsuffix .c, \
 		ft_dlstnew \
 		ft_dlstsize \
 		ft_fprintf \
+		ft_get_next_line \
 		ft_intlen \
 		ft_isalnum \
 		ft_isalpha \
@@ -63,6 +64,7 @@ SRCS	= $(addprefix src/, $(addsuffix .c, \
 		ft_putnbr_base_fd \
 		ft_putstr_fd \
 		ft_split \
+		ft_strappend \
 		ft_strchr \
 		ft_strclen \
 		ft_strdup \

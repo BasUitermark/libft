@@ -3,6 +3,11 @@
 
 # include "def.h"
 
+
+//== get_next_line ==/
+
+char	*ft_get_next_line(int fd);
+
 //==Character Functions==//
 
 /**
@@ -206,6 +211,12 @@ char	*ft_itoa_base(size_t n, char const *base_set);
  * @param c The delimiter on which point to split.
  */
 char	**ft_split(char const *s, char c);
+
+/**
+ * 
+ * 
+*/
+char	*ft_strappend(char const *s1, char const *s2);
 
 /**
  * Duplicates a string to a new string.
