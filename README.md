@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="assets/code.png" alt="logo" width="200" height="auto" />
+  <img src="assets/library.png" alt="logo" width="200" height="auto" />
   <h1>LIBFT</h1>
   
   <p>
