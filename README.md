@@ -13,10 +13,9 @@
 - [About the Project](#star2-about-the-project)
   * [Features](#dart-features)
 - [Getting Started](#toolbox-getting-started)
-  * [Prerequisites](#bangbang-prerequisites)
   * [Installation](#gear-installation)
 - [Usage](#eyes-usage)
-- [Roadmap](#compass: Roadmap)
+- [Roadmap](#compass-roadmap)
 - [Contact](#handshake-contact)
 
 
