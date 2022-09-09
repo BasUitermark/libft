@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_atoi.c                                          :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: buiterma <buiterma@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/09/09 18:51:20 by buiterma      #+#    #+#                 */
+/*   Updated: 2022/09/09 18:51:21 by buiterma      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/libft.h"
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	int	i;
-	int	min;
-	int	out;
+	long	i;
+	long	min;
+	long	out;
 
 	i = 0;
 	min = 1;

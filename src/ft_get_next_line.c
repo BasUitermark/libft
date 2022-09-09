@@ -1,7 +1,18 @@
-#include "../include/libft.h"
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_get_next_line.c                                 :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: buiterma <buiterma@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/09/09 18:52:20 by buiterma      #+#    #+#                 */
+/*   Updated: 2022/09/09 18:52:28 by buiterma      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
 
-static char	*get_line(char *readstr)
+#include "../include/libft.h"
+
+static char	*ft_get_line(char *readstr)
 {
 	size_t	i;
 
@@ -11,32 +22,45 @@ static char	*get_line(char *readstr)
 	return (ft_substr(readstr, 0, i + 1));
 }
 
-static char	*read_data(int fd, t_data_store *store)
+static char	*ft_process(t_data_store *store)
 {
-	char	BUFF[BUFFER_SIZE + 1];
-	int		b_read;
 	char	*line;
 
-	b_read = 1;
-	while (b_read > 0)
+	line = ft_get_line(store->readstr);
+	if (ft_strlen(ft_strchr(store->readstr, '\n')) != 0)
 	{
-		if (ft_strchr(store->readstr, '\n') || ft_strchr(store->readstr, '\0'))
+		store->r_main = ft_strdup(ft_strchr(store->readstr, '\n'));
+		if (!store->r_main)
+			return (NULL);
+	}
+	free(store->readstr);
+	store->readstr = NULL;
+	return (line);
+}
+
+static char	*ft_read_data(int fd, t_data_store *store)
+{
+	static char	buff[BUFFER_SIZE + 1];
+	int			b_read;
+
+	b_read = 0;
+	while (true)
+	{
+		if (ft_strchr(store->readstr, '\n'))
 			break ;
-		b_read = read(fd, BUFF, BUFFER_SIZE);
+		b_read = read(fd, buff, BUFFER_SIZE);
+		if (b_read < 0 && store->readstr)
+		{
+			free (store->readstr);
+			store->readstr = NULL;
+		}
 		if (b_read <= 0)
 			break ;
-		BUFF[b_read] = '\0';
-		store->readstr = ft_strappend(store->readstr, BUFF);
+		buff[b_read] = '\0';
+		store->readstr = ft_strappend(store->readstr, buff);
 	}
 	if (store->readstr)
-	{
-		line = get_line(store->readstr);
-		if (ft_strlen(ft_strchr(store->readstr, '\n')) != 0)
-			store->r_main = ft_strdup(ft_strchr(store->readstr, '\n'));
-		free(store->readstr);
-		store->readstr = NULL;
-		return (line);
-	}
+		return (ft_process(store));
 	return (NULL);
 }
 
@@ -44,9 +68,7 @@ char	*ft_get_next_line(int fd)
 {
 	static t_data_store	store;
 
-	if (read(fd, NULL, 0) == -1)
-		return (NULL);
-	if (fd >= 0 && fd <= 1024 && BUFFER_SIZE > 0)
+	if (read(fd, NULL, 0) != -1 && BUFFER_SIZE > 0)
 	{
 		if (store.r_main)
 		{
@@ -54,7 +76,7 @@ char	*ft_get_next_line(int fd)
 			free(store.r_main);
 			store.r_main = NULL;
 		}
-		return (read_data(fd, &store));
+		return (ft_read_data(fd, &store));
 	}
 	return (NULL);
 }

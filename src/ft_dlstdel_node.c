@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_dlstdel_node.c                                  :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: buiterma <buiterma@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2022/07/12 12:56:05 by buiterma      #+#    #+#                 */
+/*   Updated: 2022/07/12 12:56:06 by buiterma      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/libft.h"
 
 void	ft_dlstdel_node(t_dlist **lst, t_dlist *del_node)
