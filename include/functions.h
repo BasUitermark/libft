@@ -6,7 +6,7 @@
 /*   By: buiterma <buiterma@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/09/09 18:55:32 by buiterma      #+#    #+#                 */
-/*   Updated: 2022/09/09 18:58:26 by buiterma      ########   odam.nl         */
+/*   Updated: 2023/03/10 16:45:07 by buiterma      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -403,6 +403,8 @@ int			ft_min(int *array, int size);
  * @return int 
  */
 int			ft_max(int *array, int size);
+
+double		ft_linear_conversion(t_dpos old, t_dpos new, double old_value);
 
 //==Filedescriptor Functions ==//
 

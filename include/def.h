@@ -6,7 +6,7 @@
 /*   By: buiterma <buiterma@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/02/03 15:25:47 by buiterma      #+#    #+#                 */
-/*   Updated: 2023/03/04 09:03:00 by buiterma      ########   odam.nl         */
+/*   Updated: 2023/03/10 16:45:35 by buiterma      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,12 @@ typedef struct s_data_store
 	char	*readstr;
 	char	*r_main;
 }t_data_store;
+
+typedef struct s_dpos
+{
+	double			x;
+	double			y;
+}	t_dpos;
 
 //=== Print Colors ==//
 

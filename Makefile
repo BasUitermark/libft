@@ -108,7 +108,8 @@ SRCS		= $(addprefix src/, $(addsuffix .c, \
 			ft_strtrim \
 			ft_substr \
 			ft_tolower \
-			ft_toupper))
+			ft_toupper \
+			ft_linear_conversion))
 
 #===============================================================================: Make commands
 all: message $(NAME)
