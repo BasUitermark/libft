@@ -6,11 +6,11 @@
 /*   By: buiterma <buiterma@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/10 16:44:31 by buiterma      #+#    #+#                 */
-/*   Updated: 2023/03/10 16:44:44 by buiterma      ########   odam.nl         */
+/*   Updated: 2023/03/10 16:53:21 by buiterma      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../include/libft.h"
 
 double	ft_linear_conversion(t_dpos old, t_dpos new, double old_value)
 {
